@@ -1,10 +1,6 @@
 "use server";
 
-<<<<<<< HEAD
 import { TG_BOT_TOKEN, TG_CHAT_ID } from "@/config";
-=======
-import { TG_BOT_TOKEN } from "@/config";
->>>>>>> c512a5384fb247faad7c61f5a02a3fb5ff46a2bc
 import { ContactFormData, contactSchema } from "@/schema";
 
 type FormResponse = {
@@ -27,7 +23,6 @@ export async function leadSubmissionAction(
     const { name, email, message, subject } = validation.data;
 
     const data = {
-<<<<<<< HEAD
       chat_id: TG_CHAT_ID,
       parse_mode: "HTML",
       text: `<b>🎉 New Lead Alert!</b>\n\n
@@ -38,15 +33,6 @@ export async function leadSubmissionAction(
     };
     console.log(data);
     if (!TG_BOT_TOKEN) throw new Error("Invalid Token");
-=======
-      chat_id: 445532,
-      parse_mode: "HTML",
-      text: "<b>🎉 New Lead Alert!</b>\n\n👤 <b>Name:</b> Boniface Maina\n🎂 <b>Age:</b> 20\n🏫 <b>School:</b> TWT\n💰 <b>Budget:</b> Ksh 10,000 \n <code>let a = '10'</code>",
-    };
-
-    if (!TG_BOT_TOKEN) throw new Error("Invalid token");
-
->>>>>>> c512a5384fb247faad7c61f5a02a3fb5ff46a2bc
     await fetch(getTgUrl(TG_BOT_TOKEN), {
       method: "POST",
       headers: {
